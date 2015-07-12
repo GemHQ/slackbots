@@ -1,0 +1,1 @@
+worker: python -c 'import concierge; concierge.main()'
