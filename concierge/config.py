@@ -3,20 +3,15 @@
 API_KEY='FILLMEIN'
 
 
-USERS = {'memmaniac': 'U03RJDUUT',
-         'James': 'U035KQ55W',
-         'elitistbot': 'U03R6U9J7'}
+LANGUAGE = ['python',
+            'ruby',
+            'java',
+            'node'
+            'ios',
+            'andriod']
 
-CONFS = ['You got it.',
-         'Sure thing, broheim.',
-         'Totally agree - on it.',
-         'Yeah, okay.',
-         'If you say so.',
-         'Fiiiiiiine.',
-         'Really? If you\'re sure.']
+GREETING = '''Welcome to Gem Support!  To get going we've created snippets in the language of your choice.  
+            Just send me a message with your language choice.  For example `@gem-concierge python` 
+            '''
 
-ATTITUDES = {'amicable': CONFS[0:3],
-             'indifferent': CONFS[3:5],
-             'sassy': CONFS[5:]}
-
-USAGE = "Usage: adhocbot [info, watch, unwatch] [btc,tbtc:]txhash -- or did you want me to say something clever?"
+CONCIERGE_ID = 'FILLMEIN'
