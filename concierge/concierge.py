@@ -27,7 +27,7 @@ def main():
             if is_message(m) and you_talkin_to_me(m):
                 snippet_language = get_language_response(m)
             #send appropriate snippet
-            send_snippet(sc, channel_id)
+            send_snippet(sc, channel_id, snippet_language)
         sleep(2)
 
 def send_message(sc, channel_id, text):
@@ -41,8 +41,19 @@ def send_greeting(sc, channel_id):
     send_message(sc, channel_id, GREETING)
 
 
-def send_snippet(sc, channel_id):
+def send_snippet(sc, channel_id, language):
+    send_message(sc, channel_id, format_snippet(language))
 
+
+def format_snippet(language):
+    message = '```'
+    for k, v in SNIPPETS[language].iteritems():
+        message = message + k, + v + '\n'
+    message = message + '```'
+
+    return message
+
+    
 
 def open_direct_message(message, sc):
     user_id = message['user']['id']
@@ -60,7 +71,7 @@ def is_new_user(message):
 
 def get_language_response(message):
     try:
-        for l in LANGUAGE:
+        for l in SNIPPETS.keys():
             if l in message['text']:
                 return l
     except:
